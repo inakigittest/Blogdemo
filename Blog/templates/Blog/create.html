@@ -1,0 +1,11 @@
+{% extends 'Blog/base.html' %} {% load bootstrap5 %} 
+{% block title %}
+Crear nuevo Post
+{% endblock %} 
+  {% block content %}
+  <h1>Crear nuevo Post</h1>
+  <form action="{% url 'create_view' %}" method="POST">
+    {% csrf_token %} {% bootstrap_form form layout='horizontal' %}
+    <button type="submit" class="btn btn-lg btn-primary fw-bold">Crear</button>
+  </form>
+  {% endblock %}

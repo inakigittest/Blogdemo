@@ -1,0 +1,18 @@
+{% extends 'Blog/base.html' %} 
+{% block title %}
+Home
+{% endblock %} 
+    {% block content %}
+    <h1>Blog García-Azúa-Pérez</h1>
+      {% for post in posts %} 
+        <p class="lead"><h2>{{ post.title }}</h2><br>{{ post.content }}</p>
+      {% endfor %}
+      
+      <a
+        href="{% url 'create_view' %}"
+        class="btn btn-lg btn-secondary fw-bold border-white bg-white"
+      >
+        Nuevo Post
+      </a>
+    </p>
+    {% endblock %}
